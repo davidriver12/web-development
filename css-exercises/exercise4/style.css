@@ -1,0 +1,22 @@
+.top-container {
+    width: 200px;
+    height: 200px;
+    background-color: blue;
+}
+
+.middle-container {
+    left: 208px;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background-color: red;
+}
+
+.bottom-container {
+    position: absolute;
+    top: 409px;
+    left: 408px;
+    width: 200px;
+    height: 200px;
+    background-color: yellow;
+}
