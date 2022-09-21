@@ -1,8 +1,13 @@
 /*
 Pig Latin
 */
+const resultSpan = document.createElement('span');
+const bodyElement = document.getElementsByTagName("BODY")[0];
+bodyElement.appendChild(resultSpan);
 
-function igpayAtinlay(str) {
+function igpayAtinlay() {
+    const textInput = document.getElementById('num');
+    let str = num.value;
     var returnArray = [],
         wordArray = str.split(' ');
 
@@ -25,9 +30,10 @@ function igpayAtinlay(str) {
 
         returnArray.push(word.substr(beginning.length) + beginning + 'ay');
     }
+    resultSpan.textContent = returnArray.join(' ');
     return returnArray.join(' ');
 }
 
-console.log(igpayAtinlay("pizza")); // "izzapay"
-console.log(igpayAtinlay("apple")); // "appleway"
-console.log(igpayAtinlay("happy meal")); // "appyhay ealmay"
+//console.log(igpayAtinlay("pizza")); // "izzapay"
+//console.log(igpayAtinlay("apple")); // "appleway"
+//console.log(igpayAtinlay("happy meal")); // "appyhay ealmay"

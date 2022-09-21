@@ -4,13 +4,30 @@
 */
 
 var sieve = function (n) {
-    "use strict";
 
     var array = [], primes = [], i, j;
-
-
-
+    for (let i = 2; i <= n; i++){
+        array.push(i);
+    }
+    for (let j = 2; j <= n; j++){
+        if (array[j] != null){
+            mark(j, array);
+        }
+    }
+    for(let k = 0; k<array.length; k++){
+        if (array[k] != null){
+            primes.push(array[k]);
+        }
+    }
     return primes;
 };
 
-console.log(sieve(1000000));
+const mark = (p, arr) => {
+    for (let i = 0; i<= arr.length; i++){
+        if ((arr[i] % p == 0) && (arr[i] >= p*p)){
+            arr[i] = null;
+        }
+    }
+};
+console.log('Prime numbers smaller than 50: ')
+console.log(sieve(50));

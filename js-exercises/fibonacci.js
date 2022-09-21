@@ -4,12 +4,12 @@
     generate the Fibonacci sequence to that number or to the Nth number.
 */
 // This array will keep memory of the previous fibonacci numbers
-var memo = {};
+var memo = [1, 1];
 function fibonacci() {
-    "use strict";
-    var n = document.getElementById("num").value;
+    var n = parseInt(document.getElementById("num").value);
     var val = f(n);
     document.getElementById("fibonacciLbl").textContent = val;
+    return
     //return f;
 }
 
@@ -21,8 +21,12 @@ function f(n) {
         value = memo[n];
     } else {
         //TODO: Implement the fibonacci function here!
-
-        memo[n] = value;
+        while(memo.length < (n-1)){
+            let newValue = memo[memo.length-1] + memo[memo.length-2];
+            console.log(newValue);
+            memo.push(newValue);
+        }
+        value = memo[memo.length-1];
     }
 
     return value;

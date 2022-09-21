@@ -31,7 +31,7 @@ var getPrimeFactors = function (n) {
 
     //TODO: Check which numbers are factors of n and also check if
     // that number also happens to be a prime
-    for (let i = 2; i <= Math.sqrt(n); i++){
+    for (let i = 2; i <= n/2; i++){
         if (n%i == 0 && isPrime(i)){
             sequence.push(i);
         }
